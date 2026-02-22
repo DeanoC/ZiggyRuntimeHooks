@@ -1,9 +1,14 @@
 .{
     .name = .ziggy_runtime_hooks,
-    .version = "0.3.0",
+    .version = "0.4.0",
     .fingerprint = 0x94d576a3200ac9eb,
     .minimum_zig_version = "0.13.0",
-    .dependencies = .{},
+    .dependencies = .{
+        .ziggy_memory_store = .{
+            .url = "https://github.com/DeanoC/ZiggyMemoryStore/archive/refs/tags/v0.1.0.tar.gz",
+            .hash = "ziggy_memory_store-0.1.0-QlN-_5uGAQAT0z2xGi3yBmg3YOPYt288yaKoEjSBM_EU",
+        },
+    },
     .paths = .{
         "build.zig",
         "build.zig.zon",
