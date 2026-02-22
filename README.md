@@ -9,6 +9,7 @@ Wave-2 extraction module for ZiggySpiderweb runtime/hook layer.
   - `HookPhase`, `HookError`, `HookPriority`
   - `CorePrompt` / `Rom` and entries
   - `PendingTools`
+- `hook_registry_engine` generic priority-ordered hook execution engine.
 
 ## Planned Scope
 
