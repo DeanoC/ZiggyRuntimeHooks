@@ -9,6 +9,11 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
     const ziggy_memory_store_module = ziggy_memory_store_dep.module("ziggy-memory-store");
+    const ziggy_run_orchestrator_dep = b.dependency("ziggy_run_orchestrator", .{
+        .target = target,
+        .optimize = optimize,
+    });
+    const ziggy_run_orchestrator_module = ziggy_run_orchestrator_dep.module("ziggy-run-orchestrator");
 
     const lib = b.addModule("ziggy-runtime-hooks", .{
         .root_source_file = b.path("src/lib.zig"),
@@ -16,6 +21,7 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
     lib.addImport("ziggy-memory-store", ziggy_memory_store_module);
+    lib.addImport("ziggy-run-orchestrator", ziggy_run_orchestrator_module);
 
     const lib_tests = b.addTest(.{ .root_module = lib });
     lib_tests.linkLibC();

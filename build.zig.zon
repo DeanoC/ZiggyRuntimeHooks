@@ -8,6 +8,10 @@
             .url = "https://github.com/DeanoC/ZiggyMemoryStore/archive/refs/tags/v0.1.0.tar.gz",
             .hash = "ziggy_memory_store-0.1.0-QlN-_5uGAQAT0z2xGi3yBmg3YOPYt288yaKoEjSBM_EU",
         },
+        .ziggy_run_orchestrator = .{
+            .url = "https://github.com/DeanoC/ZiggyRunOrchestrator/archive/dbd10f24fdecd5cce606b19ddde8d50a4a7b1ab9.tar.gz",
+            .hash = "ziggy_run_orchestrator-0.1.0-iczgkPzWAADoxANEsAoIo5hZcraQ5lZ8BOWeuX3RX3SI",
+        },
     },
     .paths = .{
         "build.zig",

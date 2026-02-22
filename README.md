@@ -10,8 +10,10 @@ Wave-2 extraction module for ZiggySpiderweb runtime/hook layer.
   - `CorePrompt` / `Rom` and entries
   - `PendingTools`
 - `hook_registry_engine` generic priority-ordered hook execution engine.
-- `run_engine` lifecycle state machine and persistence-backed run/event orchestration.
-- `run_orchestration_helpers` timeout policy + run-step cancellation tracking utilities.
+- Compatibility re-exports for:
+  - `run_engine`
+  - `run_orchestration_helpers`
+  from `ziggy-run-orchestrator`.
 
 ## Planned Scope
 
