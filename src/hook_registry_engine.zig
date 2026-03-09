@@ -1,4 +1,5 @@
 const std = @import("std");
+const builtin = @import("builtin");
 const primitives = @import("hook_primitives.zig");
 
 pub const HookPhase = primitives.HookPhase;
@@ -66,7 +67,9 @@ pub fn HookRegistry(comptime ContextType: type, comptime DataType: type) type {
 
             for (list.items) |hook| {
                 hook.callback(ctx, data) catch |err| {
-                    std.log.warn("Hook '{s}' failed in {s}: {s}", .{ hook.name, @tagName(phase), @errorName(err) });
+                    if (!(builtin.is_test and err == HookError.HookFailed)) {
+                        std.log.warn("Hook '{s}' failed in {s}: {s}", .{ hook.name, @tagName(phase), @errorName(err) });
+                    }
                     return HookError.HookFailed;
                 };
             }
